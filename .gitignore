@@ -4,3 +4,5 @@ testDB.db
 db/Models.mwb.bak
 
 *.db
+
+.idea/
