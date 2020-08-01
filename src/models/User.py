@@ -6,12 +6,12 @@ class User:
 
     def __init__(self, userId=None, name=None):
         if (userId == None):
-            print("Create self from random values")
+            # "Create self from random values"
             self.userId = User.randomId
             User.randomId += 1
             self.name = getRandomName()
         elif (name == None):
-            print("Get rest of values from DB or cache")
+            # "Get rest of values from DB or cache"
             self.id = userId
         else:
             self.id = userId

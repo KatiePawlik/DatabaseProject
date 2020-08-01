@@ -1,5 +1,3 @@
-from models.User import User
-from models.Doctor import Doctor
+from database.FillDatabase import populateDataBase
 
-print(User().name)
-print(Doctor().name)
+populateDataBase(3)
