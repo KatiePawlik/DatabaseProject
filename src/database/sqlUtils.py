@@ -4,7 +4,11 @@ from sqlite3 import Error
 class sqlUtils():
     def __init__(self):
         print("hi")
-    def addRowtoTable(self, identifier, name, password):
+    def addUserToDB(self, user):
+        name = user.name
+        identifier = user.id
+        password = user.password_hash
+
         self.database = r"C:/git/Git-Practice/DatabaseProject/PawlikLabs.db"
         self.conn = None
         self.user = [(identifier, name, password),]   
@@ -17,7 +21,7 @@ class sqlUtils():
 
         except Error as e: 
             # enable for debugging:
-            # print(e)
+            print(e)
             return False
         
         return self.cur.lastrowid

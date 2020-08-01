@@ -18,6 +18,7 @@ from models.Doctor import Doctor
 from models.User import User
 from models.MedicalReport import MedicalReport
 from models.MedicalVisit import MedicalVisit
+from database.sqlUtils import sqlUtils
 
 
 def getRandomUsers(amount):
@@ -61,5 +62,6 @@ def populateDataBase(amount):
     visits = getRandomMedicalVisits(amount, users, doctors)
     reports = getRandomMedicalReports(amount, visits)
 
+    sqlUtil = sqlUtils()
     for user in users:
-        print(user.name)
+        sqlUtil.addUserToDB(user)

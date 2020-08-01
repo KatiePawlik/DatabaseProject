@@ -15,7 +15,7 @@ class MedicalVisit:
     def __init__(self, visitId=None, patient=None, doctor=None):
         if (visitId == None):
             # "Create self from random values
-            self.visitId = MedicalVisit.randomId
+            self.id = MedicalVisit.randomId
             MedicalVisit.randomId += 1
             self.patient = patient
             self.doctor = doctor

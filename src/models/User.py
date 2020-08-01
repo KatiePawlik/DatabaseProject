@@ -7,7 +7,7 @@ class User:
     def __init__(self, userId=None, name=None):
         if (userId == None):
             # "Create self from random values"
-            self.userId = User.randomId
+            self.id = User.randomId
             User.randomId += 1
             self.name = getRandomName()
         elif (name == None):
