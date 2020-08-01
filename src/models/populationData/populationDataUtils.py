@@ -15,7 +15,7 @@ def getRandomGirlName():
     with open(NAME_FILE, 'r') as file_content:
         content = file_content.read()
         data = json.loads(content)
-        randIndex = random.randint(0, len(data['girls']))
+        randIndex = random.randint(0, len(data['girls']) - 1)
         return data['girls'][randIndex]
 
 
@@ -23,5 +23,5 @@ def getRandomBoyName():
     with open(NAME_FILE, 'r') as file_content:
         content = file_content.read()
         data = json.loads(content)
-        randIndex = random.randint(0, len(data['boys']))
+        randIndex = random.randint(0, len(data['boys']) - 1)
         return data['boys'][randIndex]

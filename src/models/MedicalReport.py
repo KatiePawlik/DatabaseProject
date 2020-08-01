@@ -14,14 +14,14 @@ class MedicalReport:
 
     def __init__(self, reportId=None, data=None, visit=None):
         if (reportId == None):
-            print("Create self from random values")
+            # "Create self from random values
             self.id = MedicalReport.randomId
             MedicalReport.randomId += 1
             self.data = "Report data is here. Lab results or something."
             self.visit = visit
         elif (data == None or visit == None):
             self.id = reportId
-            print("Get report info from database or cache")
+            # Get report info from database or cache
         else:
             self.id = reportId
             self.data = data
