@@ -1,7 +1,10 @@
+from .populationData.populationDataUtils import getRandomName
+
 class Doctor:
-    def __init__(self, staffId, name=None):
+    def __init__(self, staffId=None, name=None):
         if (staffId == None):
             print("Create self from random values")
+            self.name = "Dr. {0}".format(getRandomName())
         elif(name == None):
             self.id = staffId
             print("Get rest of doctor from database or cache or something")
