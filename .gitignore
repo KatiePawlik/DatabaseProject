@@ -8,3 +8,4 @@ db/Models.mwb.bak
 .idea/
 
 *.pyc
+.vscode/launch.json
