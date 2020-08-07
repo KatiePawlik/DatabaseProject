@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS "staff" (
   "name" VARCHAR(45),
   "password_hash" VARCHAR(64));
   
-CREATE TABLE IF NOT EXISTS "med_vist" (
+CREATE TABLE IF NOT EXISTS "med_visit" (
   "id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "notes" VARCHAR(160),
   "patient_id" INTEGER,
@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS "med_vist" (
     ON DELETE SET NULL
     ON UPDATE CASCADE);
 
-CREATE INDEX "doctor_fk_idx" ON "med_vist"("doctor_id" ASC);
-CREATE INDEX "patient_fk_idx"  ON "med_vist"("patient_id" ASC);
+CREATE INDEX "doctor_fk_idx" ON "med_visit"("doctor_id" ASC);
+CREATE INDEX "patient_fk_idx"  ON "med_visit"("patient_id" ASC);
 
 CREATE TABLE IF NOT EXISTS "med_report" (
   "id" INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS "med_report" (
 
   CONSTRAINT "visit_fk"
     FOREIGN KEY ("visit_id")
-    REFERENCES "med_vist" ("id")
+    REFERENCES "med_visit" ("id")
     ON DELETE SET NULL
     ON UPDATE CASCADE);
 

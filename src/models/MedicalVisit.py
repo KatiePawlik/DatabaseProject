@@ -12,13 +12,14 @@ class MedicalVisit:
     init(visitId, patient, doctor)  - Create object from values
     '''
 
-    def __init__(self, visitId=None, patient=None, doctor=None):
+    def __init__(self, visitId=None, notes = None, patient=None, doctor=None):
         if (visitId == None):
             # "Create self from random values
             self.id = MedicalVisit.randomId
             MedicalVisit.randomId += 1
             self.patient = patient
             self.doctor = doctor
+            self.notes = "Patient Chart information. Maybe some symptoms?"
 
         elif (patient == None or doctor == None):
             # Get visit from database or cache
@@ -27,3 +28,4 @@ class MedicalVisit:
             self.id = visitId
             self.patient = patient
             self.doctor = doctor
+            self.notes = notes
