@@ -1,21 +1,6 @@
-'''
-1. Create users
-2. Create doctors
-3. Create visits
-4. Create reports
-
-Append to file
-5. Insert users
-6. Insert doctors
-7. Insert visits
-6. Insert reports
-
-Execute script
-'''
 import random
 
 from models.Doctor import Doctor
-from models.User import User
 from models.MedicalReport import MedicalReport
 from models.MedicalVisit import MedicalVisit
 from database.sqlUtils import sqlUtils
