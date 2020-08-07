@@ -1,5 +1,7 @@
 import sqlite3
 from sqlite3 import Error
+from utils.fileUtils import getDatabasePath
+
 
 
 class sqlUtils():
@@ -7,13 +9,13 @@ class sqlUtils():
         print("hi")
 
     def addUserToDB(self, user):
-        self.name = user.name
-        self.identifier = user.id
-        self.password = user.password_hash
-
-        self.database = r"C:/git/Git-Practice/DatabaseProject/PawlikLabs.db"
+        name = user.name
+        identifier = user.id
+        password = user.password_hash
+        # C:/git/Git-Practice/DatabaseProject/PawlikLabs.db
+        self.database = getDatabasePath()
         self.conn = None
-        self.user = [(self.identifier, self.name, self.password), ]
+        self.user = [(identifier, name, password), ]
         try:
             self.conn = sqlite3.connect(self.database)
             self.sql = '''INSERT INTO users(id, name, password_hash) VALUES(?,?,?)'''
